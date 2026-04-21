@@ -5,24 +5,20 @@ public class StackSurat08 {
     int size;
     int top;
 
-    // Konstruktor berparameter
     public StackSurat08(int size) {
         this.size = size;
         stack = new Surat08[size];
         top = -1;
     }
 
-    // Cek apakah stack penuh
     public boolean isFull() {
         return top == size - 1;
     }
 
-    // Cek apakah stack kosong
     public boolean isEmpty() {
         return top == -1;
     }
 
-    // Tambah surat ke stack (push)
     public void push(Surat08 surat) {
         if (!isFull()) {
             top++;
@@ -33,7 +29,6 @@ public class StackSurat08 {
         }
     }
 
-    // Keluarkan surat teratas dari stack (pop)
     public Surat08 pop() {
         if (!isEmpty()) {
             Surat08 s = stack[top];
@@ -45,7 +40,6 @@ public class StackSurat08 {
         }
     }
 
-    // Lihat surat teratas tanpa mengeluarkan (peek)
     public Surat08 peek() {
         if (!isEmpty()) {
             return stack[top];
@@ -55,7 +49,6 @@ public class StackSurat08 {
         }
     }
 
-    // Cari surat berdasarkan nama mahasiswa
     public boolean cariSurat(String nama) {
         for (int i = 0; i <= top; i++) {
             if (stack[i].namaMahasiswa.equalsIgnoreCase(nama)) {
@@ -65,7 +58,6 @@ public class StackSurat08 {
         return false;
     }
 
-    // Tampilkan semua surat dalam stack
     public void print() {
         if (isEmpty()) {
             System.out.println("Stack kosong! Tidak ada surat.");
@@ -73,7 +65,6 @@ public class StackSurat08 {
             System.out.printf("%-10s %-20s %-8s %-10s %-8s%n",
                     "ID Surat", "Nama Mahasiswa", "Kelas", "Jenis Izin", "Durasi");
             System.out.println("----------------------------------------------------------");
-            // Tampilkan dari top ke bawah (urutan stack)
             for (int i = top; i >= 0; i--) {
                 String jenis = (stack[i].jenisIzin == 'S' || stack[i].jenisIzin == 's')
                         ? "Sakit"
