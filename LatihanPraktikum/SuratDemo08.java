@@ -14,7 +14,7 @@ public class SuratDemo08 {
             System.out.println("2. Proses Surat Izin");
             System.out.println("3. Lihat Surat Izin Terakhir");
             System.out.println("4. Cari Surat");
-            System.out.println("5. Lihat Semua Surat");
+            System.out.println("5. keluar");
             System.out.print("Pilih: ");
             pilih = scan.nextInt();
             scan.nextLine();
@@ -75,8 +75,7 @@ public class SuratDemo08 {
                     break;
 
                 case 5:
-                    System.out.println("Daftar semua surat izin:");
-                    stack.print();
+                    System.out.println("Keluar dari program.");
                     break;
 
                 default:
